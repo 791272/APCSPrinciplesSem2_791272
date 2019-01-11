@@ -14,32 +14,20 @@ function init(){
 function getJSON(){
   var array = [];
   $.getJSON("data.json", function(json) {
-    for (var i = 0; i < json.data.children.length; i++){
-      array[i] = json.data.children[i];
+    for (var i = 0; i < json.meteors.length; i++){
+      array[i] = json.meteors[i].mass;
     }
-    for (var j = json.data.children.length-1; j > 0; j--){
-      for(var k = 0; k < j; k++){
-        if (array[k].ups > array[k+1].ups){
-          var temp = array[k];
-          array[k] = array[k+1];
-          array[k+1] = temp;
-        }
+    for(){
+      var index = k;
+      for(var  ){
+        if(array[j] < array[index]){
+          index = j;
       }
     }
+    var smallerNumber = array[index];
+    array[index] = array[k];
+    array[k] = smallerNumber;
+  }
    console.log(array);
-   display(array);
   });
-}
-
-  function display(array){
-    for (var m = 0; m < array.length; m++){
-      ctx.beginPath();
-      ctx.rect(100, (m*20)+100, array[m].ups/100, 10);
-      ctx.fillStyle = 'rgb(0, 255, 0)';
-      ctx.fill();
-      ctx.strokeStyle = 'rgb(0, 255, 0)';
-      ctx.stroke();
-      ctx.fillStyle = 'rgb(0, 0, 0)';
-      ctx.fillText(array[m].subreddit_subscribers + ": " + array[m].ups + " upvotes", 100, (m*20)+100);
-    }
 }
