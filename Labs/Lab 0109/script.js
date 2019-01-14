@@ -17,17 +17,43 @@ function getJSON(){
     for (var i = 0; i < json.meteors.length; i++){
       array[i] = json.meteors[i].mass;
     }
-    for(){
-      var index = k;
-      for(var  ){
-        if(array[j] < array[index]){
-          index = j;
+    
+  /* bubbleSort
+    for (var i = array.length-1; i > 0; i--){
+      for(var j = 0; j < i; j++){
+        if (array[j].length > array[j+1].length){
+          var temp = array[j].length;
+            array[j].length = array[j+1].length;
+            array[j+1].length = temp;
+          }
+        }
+      }
+
+    /* selectionSort
+      for(var i = 0; i < array.length-1; i++){
+        var index = i;
+          for(var j = i+1; j < array.length; j++){
+            if(array[j].length < array[index].length){
+              index = j;
+            }
+          }
+          var temp = array[index].length;
+          array[index].length = array[i].length;
+          array[i].length = temp;
+        }
+      */
+
+ /* insertSort
+    for(var i = 1; i < array.length; i++){
+      for(var j = i; j > 0; j--){
+        if(array[j].length < array[j-1].length){
+          var temp = array[j].length;
+          array[j].length = array[j-1].length;
+          array[j-1].length = temp;
+        }
       }
     }
-    var smallerNumber = array[index];
-    array[index] = array[k];
-    array[k] = smallerNumber;
-  }
-   console.log(array);
-  });
+  */
+console.log(array);
+});
 }
